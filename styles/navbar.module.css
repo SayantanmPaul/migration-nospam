@@ -1,0 +1,108 @@
+.text {
+  font-family: 'Bebas Neue', cursive;
+}
+.text {
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+}
+.text:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #2d7d90;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.text:hover:after {
+  width: 100%;
+  left: 0;
+}
+@media screen and (max-height: 300px) {
+  .text {
+    margin-top: 40px;
+  }
+}
+
+/* mobile menu design */
+.mobilemenutext {
+  font-family: 'Bebas Neue', cursive;
+}
+.mobilemenutext {
+  display: inline-block;
+  position: relative;
+}
+.logintext {
+  font-family: 'Oswald', sans-serif;
+}
+
+.avatartext {
+  font-family: 'Caveat', cursive;
+}
+
+/* for workspace navbar */
+
+.navtext {
+  font-family: 'Bebas Neue', cursive;
+}
+.navtext {
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+}
+.navtext:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #2d7d90;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navtext:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* for only workspace nav */
+
+.hover-underline_animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline_animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media screen and (max-height: 300px) {
+  .navtext {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .navtext {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .navtext {
+    display: block;
+  }
+}
