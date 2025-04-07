@@ -1,0 +1,6 @@
+.input_text + * {
+  color: #cbd5e1;
+}
+.input_text:focus + * {
+  color: #146690;
+}

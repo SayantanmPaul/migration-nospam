@@ -50,7 +50,7 @@ const Footer = () => {
                   Home
                 </p>
               </ScrollLink>
-              <Link rel="preload" href={"/documentation"} as="About">
+              <Link rel="preload" href={"/documentation"} as="about">
                 <p
                   style={{ fontFamily: "Sarabun, sans-serif" }}
                   className="text-white font-secondary text-sm leading-7 tracking-normal cursor-pointer"
@@ -65,7 +65,7 @@ const Footer = () => {
               >
                 Source Code
               </a>
-              <Link rel="preload" href={"/documentation"} as="About">
+              <Link rel="preload" href={"/documentation"} as="about">
                 <p
                   style={{ fontFamily: "Sarabun, sans-serif" }}
                   className="text-white font-secondary text-sm leading-7 tracking-normal cursor-pointer"

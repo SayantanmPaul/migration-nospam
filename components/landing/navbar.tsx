@@ -42,7 +42,7 @@ const Navbar = () => {
               Home
             </p>
           </Link>
-          <Link rel="preload" href={"/documentation"} as="About">
+          <Link rel="preload" href={"/documentation"} as="about">
             <p
               className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal duration-300`}
             >
@@ -147,7 +147,7 @@ const Navbar = () => {
                     Home
                   </h3>
                 </div>
-                <Link rel="preload" href={"./documentation"} as="About">
+                <Link rel="preload" href={"./documentation"} as="about">
                   <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-aut duration-200 cursor-pointer">
                     <AiOutlineCoffee className=" text-2xl text-gray-600 group-hover:text-white" />
                     <h3
