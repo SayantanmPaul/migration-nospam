@@ -1,10 +1,17 @@
+import { Providers } from "@/constant/providers";
 import type { Metadata } from "next";
+import {
+  Barlow,
+  Bebas_Neue,
+  Caveat,
+  Fjalla_One,
+  Gothic_A1,
+  Oswald,
+  Poppins,
+  Sarabun,
+} from "next/font/google";
 import "./globals.css";
-import { Barlow, Oswald, Caveat, Bebas_Neue } from "next/font/google";
-import { Sarabun } from "next/font/google";
-import { Poppins } from "next/font/google";
-import { Fjalla_One } from "next/font/google";
-import { Gothic_A1 } from "next/font/google";
+import { Toaster } from "sonner";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -69,7 +76,12 @@ export default function RootLayout({
       lang="en"
       className={`${barlow.variable} ${sarabun.variable} ${poppins.variable} ${fjalla.variable} ${gothic.variable} ${oswald.variable} ${caveat.variable} ${bebas.variable}`}
     >
-      <body className={` antialiased `}>{children}</body>
+      <body className={` antialiased `}>
+        <Providers>
+          <Toaster />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
