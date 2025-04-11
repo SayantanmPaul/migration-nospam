@@ -12,6 +12,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import QueryProvider from "@/lib/QueryProvider";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -75,12 +76,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${barlow.variable} ${sarabun.variable} ${poppins.variable} ${fjalla.variable} ${gothic.variable} ${oswald.variable} ${caveat.variable} ${bebas.variable}`}
+      suppressHydrationWarning={true}
+      data-qb-installed={true}
     >
       <body className={` antialiased `}>
-        <Providers>
-          <Toaster />
-          {children}
-        </Providers>
+        <QueryProvider>
+          <Providers>
+            <Toaster />
+            {children}
+          </Providers>
+        </QueryProvider>
       </body>
     </html>
   );

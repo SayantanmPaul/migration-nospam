@@ -18,6 +18,7 @@ import sidebarbg from "@/public/coverimages/background-blue.jpg";
 import Logo from "@/public/icons/nospamlogo.svg";
 import BoyCarsoul from "@/public/user-image/boyimage.png";
 import { DefaultSession, Session } from "next-auth";
+import { usePathname } from "next/navigation";
 
 type ExtendedSession = Session & {
   user?: {
@@ -116,6 +117,7 @@ const Sidebar = ({
   session: ExtendedSession;
   mobile?: boolean;
 }) => {
+  const pathname = usePathname();
   return (
     <div
       className={`${
@@ -133,21 +135,29 @@ const Sidebar = ({
         <Image src={Logo} alt="nospam" width={130} />
         <UserProfile session={session} />
         <div className={mobile ? "" : "p-5"}>
-          <NavLink href="" icon={BiHomeAlt} text="Main Menu" active />
           <NavLink
-            href="./spamdetect"
+            href="/space"
+            icon={BiHomeAlt}
+            text="Main Menu"
+            active={pathname === "/space"}
+          />
+          <NavLink
+            href="/space/spam-detection"
             icon={AiOutlineCoffee}
             text="Spam Detection"
+            active={pathname === "/space/spam-detection"}
           />
           <NavLink
-            href="./sentimentdetect"
+            href="/space/sentiment-detection"
             icon={MdSentimentVerySatisfied}
             text="Sentiment Analysis"
+            active={pathname === "/space/sentiment-detection"}
           />
           <NavLink
-            href="./speechdetect"
+            href="/space/speach-detection"
             icon={AiOutlineThunderbolt}
             text="Speech to Text Analysis"
+            active={pathname === "/space/speach-detection"}
           />
           <NavLink
             href="https://github.com/SayantanmPaul/nospam-web"
@@ -232,13 +242,6 @@ const SpaceLayout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Desktop Layout */}
         <div className="flex flex-row w-screen overflow-hidden ">
-          {/* <Image
-            src={sidebarbg}
-            alt="background"
-            quality={100}
-            objectFit="cover"
-            className="lg:block hidden h-screen object-full overflow-hidden absolute opacity-80 z-0"
-          /> */}
           <Sidebar session={session} mobile={false} />
           <div className="w-full">{children}</div>
         </div>
