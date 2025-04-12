@@ -14,7 +14,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { toast } from "sonner";
 
-const Login = () => {
+const LoginContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
@@ -81,83 +81,89 @@ const Login = () => {
   };
 
   return (
-    <Suspense>
-      <AuthLayout>
-        <Head>
-          <title>Login: NoSpam.</title>
-        </Head>
-        <div className=" mx-auto flex flex-col gap-7 h-full">
-          <span className="absolute lg:top-4 top-0 right-4 flex items-center gap-2 bg-[#256d85]  duration-300 cursor-pointer text-white rounded-full pl-3 pr-4 py-2">
-            <Link href={"/"} className="flex items-center gap-1">
-              <IoChevronBack size={18} />
-              <p
-                style={{ fontFamily: "Poppins, sans-serif" }}
-                className="text-sm font-base"
-              >
-                back
-              </p>
-            </Link>
-          </span>
-          {/* tiitle */}
-          <div className="title justify-center flex ">
-            <Image src={Logo} alt="NoSpam" width={140} priority={true} />
-          </div>
-
-          {/* form */}
-          <form className="flex flex-col gap-3 ">
-            {/* google signin button */}
-            <button
-              onClick={handleGoogleSignIn}
-              type="button"
-              className="input-button py-1 items-center flex flex-row border  rounded-full justify-center gap-2 hover:bg-cyan-400 border-[#3ec8f7] bg-cyan-300 cursor-pointer"
-            >
-              <FcGoogle size={22} />
-              <p
-                style={{ fontFamily: "Poppins, sans-serif" }}
-                className="text-sm font-medium"
-              >
-                Sigin with Google
-              </p>
-            </button>
-            <div className="grid grid-cols-3 items-center justify-center">
-              <div className="w-auto h-[1px] bg-gray-300"></div>
-              <a className="text-xs">or</a>
-              <div className="w-auto h-[1px] bg-gray-300"></div>
-            </div>
-            <button
-              onClick={handleGithubSignIn}
-              type="button"
-              className="input-button py-1 items-center flex flex-row border border-[#3ec8f7] bg-cyan-300 hover:bg-cyan-400 rounded-full justify-center gap-2 cursor-pointer"
-            >
-              <FaGithub size={22} />
-              <p
-                style={{ fontFamily: "Poppins, sans-serif" }}
-                className=" text-sm font-medium"
-              >
-                Sigin with Gihub
-              </p>
-            </button>
-          </form>
-          <div className="flex flex-row justify-center gap-1 ">
+    <AuthLayout>
+      <Head>
+        <title>Login: NoSpam.</title>
+      </Head>
+      <div className=" mx-auto flex flex-col gap-7 h-full">
+        <span className="absolute lg:top-4 top-0 right-4 flex items-center gap-2 bg-[#256d85]  duration-300 cursor-pointer text-white rounded-full pl-3 pr-4 py-2">
+          <Link href={"/"} className="flex items-center gap-1">
+            <IoChevronBack size={18} />
             <p
               style={{ fontFamily: "Poppins, sans-serif" }}
-              className="text-cener text-gray-400 text-xs "
+              className="text-sm font-base"
             >
-              don&#39;t have a account yet?
+              back
             </p>
-            <Link href={"/register"} as="Register">
-              <p
-                style={{ fontFamily: "Poppins, sans-serif" }}
-                className=" text-blue-700 underline text-xs"
-              >
-                Sign Up
-              </p>
-            </Link>
-          </div>
+          </Link>
+        </span>
+        {/* tiitle */}
+        <div className="title justify-center flex ">
+          <Image src={Logo} alt="NoSpam" width={140} priority={true} />
         </div>
-      </AuthLayout>
+
+        {/* form */}
+        <form className="flex flex-col gap-3 ">
+          {/* google signin button */}
+          <button
+            onClick={handleGoogleSignIn}
+            type="button"
+            className="input-button py-1 items-center flex flex-row border  rounded-full justify-center gap-2 hover:bg-cyan-400 border-[#3ec8f7] bg-cyan-300 cursor-pointer"
+          >
+            <FcGoogle size={22} />
+            <p
+              style={{ fontFamily: "Poppins, sans-serif" }}
+              className="text-sm font-medium"
+            >
+              Sigin with Google
+            </p>
+          </button>
+          <div className="grid grid-cols-3 items-center justify-center">
+            <div className="w-auto h-[1px] bg-gray-300"></div>
+            <a className="text-xs">or</a>
+            <div className="w-auto h-[1px] bg-gray-300"></div>
+          </div>
+          <button
+            onClick={handleGithubSignIn}
+            type="button"
+            className="input-button py-1 items-center flex flex-row border border-[#3ec8f7] bg-cyan-300 hover:bg-cyan-400 rounded-full justify-center gap-2 cursor-pointer"
+          >
+            <FaGithub size={22} />
+            <p
+              style={{ fontFamily: "Poppins, sans-serif" }}
+              className=" text-sm font-medium"
+            >
+              Sigin with Gihub
+            </p>
+          </button>
+        </form>
+        <div className="flex flex-row justify-center gap-1 ">
+          <p
+            style={{ fontFamily: "Poppins, sans-serif" }}
+            className="text-cener text-gray-400 text-xs "
+          >
+            don&#39;t have a account yet?
+          </p>
+          <Link href={"/register"} as="Register">
+            <p
+              style={{ fontFamily: "Poppins, sans-serif" }}
+              className=" text-blue-700 underline text-xs"
+            >
+              Sign Up
+            </p>
+          </Link>
+        </div>
+      </div>
+    </AuthLayout>
+  );
+};
+
+const LoginPage = () => {
+  return (
+    <Suspense>
+      <LoginContent />
     </Suspense>
   );
 };
 
-export default Login;
+export default LoginPage;
