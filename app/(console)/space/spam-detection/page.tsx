@@ -21,6 +21,9 @@ const SpamDetectPage = () => {
       toast.error("Please enter some text to analyze");
       return;
     }
+    if(comment.length < 50){
+      toast.error("Please provide at least 50 characters");
+    }
     setIsLoading(true);
     try {
       const response = await GenerateSpamEvaluation({ comment: comment });
@@ -49,7 +52,7 @@ const SpamDetectPage = () => {
 
   return (
     <div className="flex items-center justify-center lg:pt-5 pt-4">
-      <div className="greenbox md:mx-6 mx-4 w-[100%] h-[97vh] rounded-lg bg-[#80FFDB]">
+      <div className="greenbox md:mx-6 mx-4 w-[100%] h-[95vh] rounded-lg bg-[#80FFDB]">
         <div className="flex flex-col lg:px-12 px-4 lg:pt-12 md:pt-8 pt-4 lg:gap-5 gap-2">
           <div className="flex flex-row">
             <p

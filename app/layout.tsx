@@ -77,7 +77,6 @@ export default function RootLayout({
       lang="en"
       className={`${barlow.variable} ${sarabun.variable} ${poppins.variable} ${fjalla.variable} ${gothic.variable} ${oswald.variable} ${caveat.variable} ${bebas.variable}`}
       suppressHydrationWarning={true}
-      data-qb-installed={true}
     >
       <body className={` antialiased `}>
         <QueryProvider>
