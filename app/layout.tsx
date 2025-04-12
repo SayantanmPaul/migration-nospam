@@ -13,6 +13,7 @@ import {
 import "./globals.css";
 import { Toaster } from "sonner";
 import QueryProvider from "@/lib/QueryProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function RootLayout({
             {children}
           </Providers>
         </QueryProvider>
+        <Analytics />
       </body>
     </html>
   );
