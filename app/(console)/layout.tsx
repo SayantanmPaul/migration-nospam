@@ -18,6 +18,7 @@ import sidebarbg from "@/public/coverimages/background-blue.jpg";
 import Logo from "@/public/icons/nospamlogo.svg";
 import BoyCarsoul from "@/public/user-image/boyimage.png";
 import { DefaultSession, Session } from "next-auth";
+import { usePathname } from "next/navigation";
 
 type ExtendedSession = Session & {
   user?: {
@@ -116,38 +117,50 @@ const Sidebar = ({
   session: ExtendedSession;
   mobile?: boolean;
 }) => {
+  const pathname = usePathname();
   return (
     <div
       className={`${
         mobile
           ? "p-6 w-3/5 md:w-1/3 h-full bg-gradient-to-r from-[#4CACBC] to-[#488FB1] z-20 fixed top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500"
-          : "py-6 h-screens top-0 -left-96 lg:left-0 w-fit peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500 hidden lg:block z-10"
+          : "py-6 h-screen top-0 -left-96 lg:left-0 w-fit peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500 hidden lg:block z-10"
       }`}
       // style={ backgmobile ? {roundImage: sidebarbg } : {}}
       style={{
         backgroundImage: `url(${sidebarbg.src})`,
         backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "repeat",
+        overflowY: "auto",
       }}
     >
       <div className="flex flex-col justify-start items-center">
         <Image src={Logo} alt="nospam" width={130} />
         <UserProfile session={session} />
         <div className={mobile ? "" : "p-5"}>
-          <NavLink href="" icon={BiHomeAlt} text="Main Menu" active />
           <NavLink
-            href="./spamdetect"
+            href="/space"
+            icon={BiHomeAlt}
+            text="Main Menu"
+            active={pathname === "/space"}
+          />
+          <NavLink
+            href="/space/spam-detection"
             icon={AiOutlineCoffee}
             text="Spam Detection"
+            active={pathname === "/space/spam-detection"}
           />
           <NavLink
-            href="./sentimentdetect"
+            href="/space/sentiment-detection"
             icon={MdSentimentVerySatisfied}
             text="Sentiment Analysis"
+            active={pathname === "/space/sentiment-detection"}
           />
           <NavLink
-            href="./speechdetect"
+            href="/space/speach-detection"
             icon={AiOutlineThunderbolt}
             text="Speech to Text Analysis"
+            active={pathname === "/space/speach-detection"}
           />
           <NavLink
             href="https://github.com/SayantanmPaul/nospam-web"
@@ -232,13 +245,6 @@ const SpaceLayout = ({ children }: { children: React.ReactNode }) => {
 
         {/* Desktop Layout */}
         <div className="flex flex-row w-screen overflow-hidden ">
-          {/* <Image
-            src={sidebarbg}
-            alt="background"
-            quality={100}
-            objectFit="cover"
-            className="lg:block hidden h-screen object-full overflow-hidden absolute opacity-80 z-0"
-          /> */}
           <Sidebar session={session} mobile={false} />
           <div className="w-full">{children}</div>
         </div>
