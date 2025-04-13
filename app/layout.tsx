@@ -79,7 +79,7 @@ export default function RootLayout({
       className={`${barlow.variable} ${sarabun.variable} ${poppins.variable} ${fjalla.variable} ${gothic.variable} ${oswald.variable} ${caveat.variable} ${bebas.variable}`}
       suppressHydrationWarning={true}
     >
-      <body className={` antialiased `}>
+      <body className={` antialiased bg-white`}>
         <QueryProvider>
           <Providers>
             <Toaster />

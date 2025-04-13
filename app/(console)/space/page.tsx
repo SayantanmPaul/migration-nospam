@@ -8,7 +8,7 @@ export default function Page() {
     <div className="lg:p-12 p-4 flex flex-col h-screen lg:gap-5 overflow-hidden">
       <h1
         style={{ fontFamily: "Poppins, sans-serif" }}
-        className="lg:text-3xl text-2xl font-bold  text-[#256D85] tracking-normal"
+        className="lg:text-3xl text-2xl font-semibold  text-[#256D85] tracking-normal"
       >
         Home Page
       </h1>
@@ -17,19 +17,19 @@ export default function Page() {
           <Image src={Home} alt="homeimage" width={450} />
           <h1
             style={{ fontFamily: "Poppins, sans-serif" }}
-            className="lg:text-2xl text-md font-bold  text-[#256D85] tracking-normal"
+            className="lg:text-2xl text-md font-semibold  text-[#256D85] tracking-normal"
           >
             You have been successfully Logged In
           </h1>
           <p
             style={{ fontFamily: "Poppins, sans-serif" }}
-            className="lg:text-sm text-xs font-bold  text-[#256D85] tracking-normal"
+            className="lg:text-sm text-xs font-semibold  text-[#256D85] tracking-normal"
           >
             Check out our current projects
           </p>
           <Link href="/space/spam-detection">
             <button className="py-2">
-              <span className="inline-flex items-center justify-center lg:px-5 px-3 py-1 text-base font-medium text-center text-indigo-100 border border-indigo-500 rounded-lg shadow-sm cursor-pointer hover:text-white bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500">
+              <span className=" font-semibold inline-flex items-center justify-center lg:px-5 px-3 py-1 text-base text-center text-indigo-100 border border-indigo-500 rounded-lg shadow-sm cursor-pointer hover:text-white bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500">
                 <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
                 <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-0"></span>
                 <svg

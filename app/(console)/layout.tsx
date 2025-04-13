@@ -228,6 +228,7 @@ const SpaceLayout = ({ children }: { children: React.ReactNode }) => {
         exit={{ opacity: 0 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 5 }}
+        className="bg-white"
       >
         {/* Mobile Navigation */}
         <Disclosure as="nav" className="block lg:hidden">

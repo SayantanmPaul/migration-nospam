@@ -18,7 +18,7 @@ export default function Home() {
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 4 }}
-      className=""
+      className="bg-white"
     >
       <div className={`${defaultstyles.pxpadding} lg:px-28 px-6 pt-5 z-20 `}>
         <Navbar />
