@@ -1,7 +1,7 @@
 import {
   generateSentimentEvaluation,
   generateSpamEvaluation,
-} from "@/api/apiClient";
+} from "@/api-client/apiClient";
 import { useMutation } from "@tanstack/react-query";
 import { SemtimentFormInput, SpamFormInput } from "@/types/types";
 
